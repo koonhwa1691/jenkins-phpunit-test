@@ -1,5 +1,5 @@
 pipeline {
-	agent {
+	agent any {
 		docker {
 			image 'composer:latest'
 		}
@@ -12,7 +12,7 @@ pipeline {
 		}
 		stage('Test') {
 			steps {
-                sh '/usr/bin/phpunit tests'
+                sh './usr/bin/phpunit tests'
             }
 		}
 	}
