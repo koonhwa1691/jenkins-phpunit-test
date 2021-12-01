@@ -12,7 +12,7 @@ pipeline {
 		}
 		stage('Test') {
 			steps {
-                sh './vendor/bin/phpunit tests'
+                sh 'https://github.com/koonhwa1691/jenkins-phpunit-test/GumballMachine.php'
             }
 		}
 	}
