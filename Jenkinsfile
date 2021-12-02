@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Hello'
+                echo '1234'
             }
         }
         stage('Test') {
             steps {
-                sh '/usr/bin/phpunit tests'
+                sh '/usr/bin/phpunit --log-junit logs/unitreport.xml -c tests/phpunit.xml tests'
             }
         }
     }
@@ -16,6 +16,5 @@ pipeline {
         always {
             junit testResults: 'logs/unitreport.xml'
         }
-    
     }
 }
